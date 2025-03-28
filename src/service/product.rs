@@ -60,4 +60,5 @@ impl ProductService {
         NotificationService.notify(&product.product_type, "PROMOTION", product.clone());
         return Ok(product);
     }
+    
 }
