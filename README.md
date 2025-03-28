@@ -104,3 +104,15 @@ If we only use the Model, the business logic and data access would be tightly co
 Postman is an excellent tool for testing APIs. It allows us to test different endpoints and ensures that the correct data is returned from the server. Features like collections for organizing requests, environments for managing different setups, and automated testing make Postman invaluable. It helps in quickly validating API functionality and is essential for our group project testing as well as future projects.
 
 #### Reflection Publisher-3
+
+1. Observer Pattern has two variations: **Push model** (publisher pushes data to subscribers) and **Pull model** (subscribers pull data from publisher). In this tutorial case, which variation of Observer Pattern that we use?
+
+In this tutorial, we are using the Push model of the Observer pattern. The publisher pushes notifications to the subscribers whenever a product is created, updated, or deleted.
+
+2. What are the advantages and disadvantages of using the other variation of Observer Pattern for this tutorial case? (example: if you answer Q1 with Push, then imagine if we used Pull)
+
+If we had used the **Pull model**, subscribers would request data from the publisher at regular intervals. The advantage would be that subscribers control when they receive updates. However, the major disadvantages are that it introduces unnecessary load on the server due to frequent polling and could result in delays in receiving important updates. The Push model is more efficient because the publisher directly sends notifications to subscribers when events occur.
+
+3. Explain what will happen to the program if we decide to not use multi-threading in the notification process.
+
+Without multi-threading, the notification process would be sequential, meaning each notification would be sent one by one. This would create significant delays, especially when there are many subscribers. It could also block the main application process, leading to poor performance. Multi-threading allows notifications to be sent concurrently, improving performance and responsiveness.
