@@ -91,4 +91,16 @@ The Singleton pattern ensures a single instance of an object, but it doesn't inh
 
 #### Reflection Publisher-2
 
+1. In the Model-View Controller (MVC) compound pattern, there is no “Service” and “Repository”. Model in MVC covers both data storage and business logic. Explain based on your understanding of design principles, why we need to separate “Service” and “Repository” from a Model?
+
+In complex applications, separating the "Service" and "Repository" from the Model helps to maintain a clean architecture. The Repository pattern abstracts the data access layer, making it easier to manage data storage independently of business logic. The Service pattern encapsulates business logic, keeping it separate from data storage concerns. This separation reduces code complexity and improves maintainability.
+
+2. What happens if we only use the Model? Explain your imagination on how the interactions between each model **(Program, Subscriber, Notification)** affect the code complexity for each model?
+
+If we only use the Model, the business logic and data access would be tightly coupled in each model. This would result in a more complex, harder-to-maintain system, as the models would be responsible for both data storage and processing. As the system grows, these models would become large and difficult to manage, increasing the likelihood of bugs and making testing harder.
+
+3. Have you explored more about **Postman**? Tell us how this tool helps you to test your current work. You might want to also list which features in Postman you are interested in or feel like it is helpful to help your Group Project or any of your future software engineering projects.
+
+Postman is an excellent tool for testing APIs. It allows us to test different endpoints and ensures that the correct data is returned from the server. Features like collections for organizing requests, environments for managing different setups, and automated testing make Postman invaluable. It helps in quickly validating API functionality and is essential for our group project testing as well as future projects.
+
 #### Reflection Publisher-3
