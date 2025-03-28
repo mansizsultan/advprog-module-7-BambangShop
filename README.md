@@ -77,15 +77,15 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
-1. In the Observer pattern diagram explained by the Head First Design Pattern book, Subscriber is defined as an interface. Explain based on your understanding of Observer design patterns, do we still need an interface (or trait in Rust) in this BambangShop case, or a single Model struct is enough?
+1. In the Observer pattern diagram explained by the Head First Design Pattern book, Subscriber is defined as an interface. Explain based on your understanding of Observer design patterns, do we still need an interface (or `trait` in Rust) in this BambangShop case, or a single Model `struct` is enough?
 
 In the traditional Observer pattern, a Subscriber is typically defined as an interface to allow for flexibility and ensure that all subscribers implement certain methods, such as `update()`. In the BambangShop case, we could opt for a simple model struct without an interface if we are only managing a single type of subscriber. However, defining a trait (interface) in Rust would still be beneficial if we expect different types of subscribers with varying behaviors in the future.
 
-2. id in Program and url in Subscriber is intended to be unique. Explain based on your understanding, is using Vec (list) sufficient or using DashMap (map/dictionary) like we currently use is necessary for this case?
+2. `id` in `Program` and `url` in `Subscriber` is intended to be unique. Explain based on your understanding, is using `Vec` (list) sufficient or using `DashMap` (map/dictionary) like we currently use is necessary for this case?
 
 While a `Vec` could work for a small number of subscribers, using a `DashMap` is more efficient when handling large numbers of unique identifiers, such as `id` or `url`. The `DashMap` allows for fast lookups, insertions, and deletions, which ensures better performance, especially as the number of subscribers increases. It also provides thread safety, which is crucial in concurrent environments.
 
-3. When programming using Rust, we are enforced by rigorous compiler constraints to make a thread-safe program. In the case of the List of Subscribers (SUBSCRIBERS) static variable, we used the DashMap external library for thread-safe HashMap. Explain based on your understanding of design patterns, do we still need DashMap or we can implement Singleton pattern instead?
+3. When programming using Rust, we are enforced by rigorous compiler constraints to make a thread-safe program. In the case of the List of Subscribers **(SUBSCRIBERS)** static variable, we used the `DashMap` external library for **thread-safe ``HashMap``**. Explain based on your understanding of design patterns, do we still need DashMap or we can implement Singleton pattern instead?
 
 The Singleton pattern ensures a single instance of an object, but it doesn't inherently provide thread safety. In this case, using the `DashMap` external library is still necessary because it ensures thread-safe operations for shared data. While a Singleton could ensure only one instance of the subscriber list, it would not manage concurrent data access efficiently without a thread-safe collection like `DashMap`.
 
