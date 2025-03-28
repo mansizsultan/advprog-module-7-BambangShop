@@ -139,3 +139,38 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/rust,linux,windows,database,rust-analyzer,visualstudiocode,venv,dotenv,virtualenv,direnv,jenv,git
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore editor-specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Ignore Rust build files
+/target/
+Cargo.lock
+
+# Ignore compiled Python files
+*.pyc
+*.pyo
+__pycache__/
+
+# Ignore environment files
+.env
+.env.local
+
+# Ignore secrets and sensitive files
+secrets.json
+postman/*.json
+postman/*
+
+# Ignore GitHub security exclusions
+.github/
+
+# Ignore logs and temporary files
+*.log
+*.tmp
